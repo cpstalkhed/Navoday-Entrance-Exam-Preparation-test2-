@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#4f46e5">
+<title>नवोदय विजययान – MAT-02 वर्गीकरण</title>
+<style>
+:root{--p:#4f46e5;--p2:#7c3aed;--bg:#f5f7ff;--card:#fff;--text:#172033;--muted:#64748b;--ok:#15803d;--bad:#dc2626;--gold:#d97706}
+*{box-sizing:border-box}body{margin:0;font-family:"Noto Sans Devanagari","Mangal",system-ui,sans-serif;background:linear-gradient(135deg,#eef2ff,#faf5ff);color:var(--text)}
+.app{max-width:980px;margin:auto;padding:14px}.hero{color:#fff;padding:24px;border-radius:24px;background:linear-gradient(135deg,var(--p),var(--p2));box-shadow:0 12px 30px #4f46e533}
+.hero h1{margin:0 0 6px;font-size:clamp(25px,5vw,40px)}.hero p{margin:4px 0;opacity:.95}
+.nav{display:flex;gap:8px;overflow:auto;margin:14px 0}.nav button,.btn{border:0;border-radius:14px;padding:11px 15px;font-weight:700;cursor:pointer;background:#fff;color:var(--p);box-shadow:0 3px 12px #00000010;white-space:nowrap}.nav button.active,.btn.primary{background:var(--p);color:#fff}
+.section{display:none}.section.active{display:block}.card{background:var(--card);border-radius:20px;padding:20px;margin:14px 0;box-shadow:0 8px 25px #312e8112;border:1px solid #e8eaff}
+h2{margin-top:0;color:#3730a3}.rule{background:#eef2ff;border-left:5px solid var(--p);padding:14px;border-radius:12px}.tip{background:#fff7ed;border-left:5px solid #f59e0b;padding:14px;border-radius:12px}
+.example{border:1px solid #e2e8f0;border-radius:16px;padding:15px;margin:12px 0}.answer{font-weight:800;color:var(--ok)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.practice-option{padding:14px;border:2px solid #e2e8f0;border-radius:14px;cursor:pointer;background:#fff}.practice-option:hover{border-color:var(--p)}
+.progress{height:9px;background:#e2e8f0;border-radius:99px;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,var(--p),var(--p2));width:0}
+.test-q{font-size:20px;font-weight:800}.opts{display:grid;gap:10px;margin:16px 0}.opt{padding:14px;border:2px solid #e2e8f0;border-radius:14px;background:#fff;cursor:pointer;text-align:left}.opt:hover{border-color:var(--p)}.opt.selected{border-color:var(--p);background:#eef2ff}
+.feedback{padding:14px;border-radius:14px;margin-top:12px;display:none}.feedback.ok{display:block;background:#ecfdf5;color:#166534}.feedback.bad{display:block;background:#fef2f2;color:#991b1b}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.small{color:var(--muted);font-size:14px}.score{font-size:42px;font-weight:900;color:var(--p);text-align:center}.cert{border:8px double #4f46e5;padding:28px;text-align:center;background:linear-gradient(135deg,#fff,#f5f3ff);border-radius:20px}.cert h2{font-size:30px}.nameinput{width:100%;padding:13px;border:2px solid #dbeafe;border-radius:12px;font-size:16px}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#ede9fe;color:#5b21b6;font-weight:700;margin:3px}.hide{display:none!important}
+@media(max-width:600px){.app{padding:9px}.hero{padding:19px}.card{padding:16px}.test-q{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="hero">
+<h1>🧠 नवोदय विजययान</h1><p><b>JNVST Learning Journey</b></p>
+<p>MAT-02 : वर्गीकरण (Classification)</p>
+</header>
+
+<div class="nav">
+<button class="active" onclick="showTab('learn',this)">📘 संकल्पना</button>
+<button onclick="showTab('examples',this)">✏️ उदाहरणे</button>
+<button onclick="showTab('practice',this)">🎯 सराव</button>
+<button onclick="showTab('test',this)">📝 20 गुणांची चाचणी</button>
+<button onclick="showTab('result',this)">🏆 निकाल</button>
+</div>
+
+<section id="learn" class="section active">
+<div class="card"><h2>🎯 शिकण्याचे उद्दिष्ट</h2>
+<p>चार पर्यायांमध्ये समान नियम असलेले तीन घटक आणि त्या नियमात न बसणारा एक घटक ओळखणे.</p>
+<div class="rule"><b>मुख्य क्लृप्ती:</b> “तीन एकत्र — एक वेगळा”</div></div>
+<div class="card"><h2>📘 वर्गीकरण म्हणजे काय?</h2>
+<p>दिलेल्या पर्यायांपैकी तीन पर्यायांमध्ये समान गुणधर्म किंवा नियम असतो, तर एक पर्याय त्या गटात बसत नाही. तोच <b>विसंगत घटक (Odd One Out)</b>.</p>
+<h3>🔍 नियम शोधताना तपासा</h3>
+<div class="grid">
+<div class="rule">शब्द कोणत्या गटात येतात?</div><div class="rule">सम / विषम / अभाज्य?</div>
+<div class="rule">पटी / वर्गसंख्या / घनसंख्या?</div><div class="rule">अक्षरांचा क्रम किंवा अंतर?</div>
+<div class="rule">आकृतीच्या बाजू व कोन?</div><div class="rule">वस्तूंचा प्रकार किंवा उपयोग?</div>
+</div></div>
+<div class="card"><h2>🧩 4-Step Smart Method</h2>
+<ol><li><b>निरीक्षण</b> — चारही पर्याय शांतपणे वाचा.</li><li><b>समानता</b> — तीन पर्यायांमध्ये काय समान आहे ते शोधा.</li><li><b>नियम</b> — तो नियम स्पष्टपणे मनात मांडा.</li><li><b>तपासणी</b> — चौथ्या पर्यायाला नियम लागू होतो का पाहा.</li></ol>
+<div class="tip">⭐ आधी नियम शोधा; नंतर उत्तर निवडा.</div></div>
+<div class="card"><h2>💡 विशेष क्लृप्त्या</h2>
+<ul><li><b>संख्या:</b> सम-विषम, अभाज्य, संयुक्त, पटी, पूर्ण वर्ग, घन.</li>
+<li><b>अक्षरे:</b> क्रम, सलगपणा, समान अंतर.</li><li><b>शब्द:</b> प्राणी, फळे, वार, महिने, वस्तू इ.</li><li><b>आकृती:</b> बाजू, कोन, बंद/उघडी आकृती.</li></ul></div>
+</section>
+
+<section id="examples" class="section">
+<div class="card"><h2>✏️ सोडवलेली उदाहरणे</h2>
+<div class="example"><b>उदाहरण 1:</b> आंबा, सफरचंद, केळी, बटाटा<br><span class="answer">उत्तर: बटाटा</span><br>पहिले तीन फळे आहेत; बटाटा भाजी आहे.</div>
+<div class="example"><b>उदाहरण 2:</b> 8, 12, 16, 21<br><span class="answer">उत्तर: 21</span><br>8, 12 आणि 16 सम संख्या आहेत; 21 विषम आहे.</div>
+<div class="example"><b>उदाहरण 3:</b> सोमवार, बुधवार, शुक्रवार, जानेवारी<br><span class="answer">उत्तर: जानेवारी</span><br>पहिले तीन वार आहेत; जानेवारी महिना आहे.</div>
+<div class="example"><b>उदाहरण 4:</b> 9, 16, 25, 30<br><span class="answer">उत्तर: 30</span><br>9, 16, 25 या पूर्ण वर्गसंख्या आहेत; 30 पूर्ण वर्गसंख्या नाही.</div>
+<div class="example"><b>उदाहरण 5:</b> AB, CD, EF, GI<br><span class="answer">उत्तर: GI</span><br>AB, CD, EF मध्ये सलग अक्षरे आहेत; G आणि I सलग नाहीत.</div>
+</div></section>
+
+<section id="practice" class="section">
+<div class="card"><h2>🎯 मार्गदर्शित सराव</h2><p class="small">उत्तर निवडा. लगेच स्वतःची पडताळणी करा.</p><div id="practiceBox"></div></div>
+</section>
+
+<section id="test" class="section">
+<div class="card">
+<h2>📝 MAT-02 FINAL PRACTICE TEST</h2>
+<div id="studentBox"><label><b>विद्यार्थ्याचे नाव</b></label><input id="studentName" class="nameinput" placeholder="तुमचे नाव लिहा"><p></p><button class="btn primary" onclick="startTest()">चाचणी सुरू करा</button></div>
+<div id="testBox" class="hide"></div>
+</div>
+</section>
+
+<section id="result" class="section">
+<div class="card"><h2>🏆 निकाल</h2><div id="resultBox"><p>चाचणी पूर्ण केल्यानंतर येथे निकाल दिसेल.</p></div></div>
+</section>
+</div>
+
+<script>
+const practice=[
+["आंबा, संत्रे, पेरू, गाजर",["आंबा","संत्रे","पेरू","गाजर"],3,"पहिले तीन फळे आहेत; गाजर भाजी आहे."],
+["4, 8, 12, 15",["4","8","12","15"],3,"4, 8, 12 सम संख्या आहेत; 15 विषम आहे."],
+["2, 3, 5, 9",["2","3","5","9"],3,"2, 3, 5 अभाज्य आहेत; 9 अभाज्य नाही."],
+["त्रिकोण, चौकोन, पंचकोन, वर्तुळ",["त्रिकोण","चौकोन","पंचकोन","वर्तुळ"],3,"पहिल्या तीन आकृत्यांना सरळ बाजू आहेत; वर्तुळाला नाही."],
+["16, 25, 36, 45",["16","25","36","45"],3,"16, 25, 36 पूर्ण वर्गसंख्या आहेत; 45 नाही."]
+];
+let pi=0;
+function renderPractice(){let q=practice[pi];document.getElementById("practiceBox").innerHTML=`<div class="example"><h3>प्रश्न ${pi+1}</h3><p class="test-q">${q[0]}</p><div class="grid">${q[1].map((x,i)=>`<button class="practice-option" onclick="checkPractice(${i})">${String.fromCharCode(65+i)}) ${x}</button>`).join("")}</div><div id="pf"></div></div>`}
+function checkPractice(i){let q=practice[pi], f=document.getElementById("pf"); if(i===q[2]){f.className="feedback ok";f.innerHTML="🟢 बरोबर! "+q[3]+"<br><br><button class='btn primary' onclick='nextPractice()'>पुढील प्रश्न →</button>"}else{f.className="feedback bad";f.innerHTML="🔴 चुकीचे. "+q[3]+"<br><br><button class='btn' onclick='renderPractice()'>🔄 पुन्हा प्रयत्न</button>"}}
+function nextPractice(){pi=(pi+1)%practice.length;renderPractice()}
+renderPractice();
+
+const qs=[
+["सफरचंद, केळी, आंबा, बटाटा",["सफरचंद","बटाटा","केळी","आंबा"],1,"पहिले, तिसरे आणि चौथे घटक फळे आहेत; बटाटा वेगळा आहे.","तीन घटक फळांच्या गटात येतात."],
+["8, 14, 20, 27",["27","14","8","20"],0,"8, 14 आणि 20 सम संख्या आहेत; 27 विषम आहे.","सम-विषम तपासा."],
+["सोमवार, बुधवार, शुक्रवार, ऑक्टोबर",["शुक्रवार","ऑक्टोबर","सोमवार","बुधवार"],1,"सोमवार, बुधवार आणि शुक्रवार हे वार आहेत; ऑक्टोबर महिना आहे.","वार आणि महिन्यांची तुलना करा."],
+["13, 17, 19, 21",["13","21","17","19"],1,"13, 17 आणि 19 अभाज्य आहेत; 21 संयुक्त आहे.","अभाज्य संख्या ओळखा."],
+["त्रिकोण, चौकोन, पंचकोन, वर्तुळ",["चौकोन","वर्तुळ","त्रिकोण","पंचकोन"],1,"पहिल्या, तिसऱ्या आणि चौथ्या आकृत्यांना सरळ बाजू आहेत; वर्तुळाला नाही.","बाजूंचा विचार करा."],
+["16, 25, 36, 50",["16","50","25","36"],1,"16, 25 आणि 36 पूर्ण वर्गसंख्या आहेत; 50 नाही.","पूर्ण वर्गसंख्या तपासा."],
+["कावळा, पोपट, कबूतर, मांजर",["कावळा","पोपट","मांजर","कबूतर"],2,"कावळा, पोपट आणि कबूतर पक्षी आहेत; मांजर सस्तन प्राणी आहे.","प्राण्यांचा प्रकार ओळखा."],
+["5, 10, 15, 22",["10","5","22","15"],2,"5, 10 आणि 15 या 5 च्या पटी आहेत; 22 नाही.","पटी तपासा."],
+["डॉक्टर, शिक्षक, अभियंता, पेरू",["पेरू","डॉक्टर","शिक्षक","अभियंता"],0,"डॉक्टर, शिक्षक आणि अभियंता हे व्यवसाय आहेत; पेरू फळ आहे.","व्यवसाय आणि फळ यांची तुलना करा."],
+["A, D, G, J, L",["A","D","L","G"],2,"A, D, G, J मध्ये प्रत्येक वेळी 3 अक्षरांची पुढची उडी आहे; J नंतर M अपेक्षित आहे. L नियमात बसत नाही.","अक्षरांमधील अंतर मोजा."],
+["4, 9, 16, 25, 30",["9","30","4","16"],1,"4, 9, 16, 25 पूर्ण वर्गसंख्या आहेत; 30 नाही.","संख्यांचा वर्गरूप तपासा."],
+["2, 3, 5, 11, 15",["2","3","15","11"],2,"2, 3, 5 आणि 11 अभाज्य आहेत; 15 संयुक्त आहे.","15 ला 3 आणि 5 ने भाग जातो का पाहा."],
+["पेन, पेन्सिल, खोडरबर, सफरचंद",["सफरचंद","पेन","पेन्सिल","खोडरबर"],0,"पहिल्या तीन अभ्यासातील वस्तू आहेत; सफरचंद फळ आहे.","वस्तूंचा प्रकार तपासा."],
+["12, 18, 24, 31",["18","31","12","24"],1,"12, 18 आणि 24 या 6 च्या पटी आहेत; 31 नाही.","6 च्या पटी शोधा."],
+["वर्तुळ, त्रिकोण, चौकोन, अर्धवर्तुळ",["वर्तुळ","त्रिकोण","अर्धवर्तुळ","चौकोन"],2,"वर्तुळ, त्रिकोण आणि चौकोन बंद आकृत्या आहेत; अर्धवर्तुळ उघडी आकृती आहे.","आकृती पूर्णपणे बंद आहे का?" ],
+["8, 27, 64, 81",["27","8","81","64"],2,"8, 27 आणि 64 या अनुक्रमे 2³, 3³, 4³ आहेत; 81 घनसंख्या नाही.","घनसंख्या तपासा."],
+["AB, CD, EF, GI",["GI","AB","CD","EF"],0,"AB, CD आणि EF मध्ये सलग दोन अक्षरे आहेत; G आणि I मध्ये H येते.","अक्षरे सलग आहेत का?" ],
+["7, 14, 21, 29",["14","29","7","21"],1,"7, 14 आणि 21 या 7 च्या पटी आहेत; 29 नाही.","7 च्या पटी तपासा."],
+["9, 16, 25, 36, 45",["16","45","9","36"],1,"9, 16, 25 आणि 36 पूर्ण वर्गसंख्या आहेत; 45 नाही.","पूर्ण वर्गसंख्या ओळखा."],
+["6, 12, 18, 24, 31",["12","31","6","24"],1,"6, 12, 18 आणि 24 या 6 च्या पटी आहेत; 31 नाही.","समान पटीचा नियम शोधा."]
+];
+let idx=0,score=0,answers=[],startTime=0;
+function startTest(){let n=document.getElementById("studentName").value.trim();if(!n){alert("कृपया विद्यार्थ्याचे नाव लिहा.");return}document.getElementById("studentBox").classList.add("hide");document.getElementById("testBox").classList.remove("hide");idx=0;score=0;answers=[];startTime=Date.now();renderQ()}
+function renderQ(){let q=qs[idx];document.getElementById("testBox").innerHTML=`<div><b>प्रश्न ${idx+1} / 20</b><div class="progress"><div class="bar" style="width:${idx/20*100}%"></div></div><p class="test-q">${q[0]}</p><div class="opts">${q[1].map((x,i)=>`<button class="opt" onclick="answer(${i})">${String.fromCharCode(65+i)}) ${x}</button>`).join("")}</div><div id="fb" class="feedback"></div><button class="btn" onclick="document.getElementById('hint').classList.toggle('hide')">💡 Hint</button><div id="hint" class="tip hide">${q[4]}</div></div>`}
+function answer(i){let q=qs[idx],fb=document.getElementById("fb");document.querySelectorAll(".opt").forEach(b=>b.disabled=true);answers[idx]=i;if(i===q[2]){score++;fb.className="feedback ok";fb.innerHTML="🟢 बरोबर! "+q[3]}else{fb.className="feedback bad";fb.innerHTML="🔴 चुकीचे. "+q[3]+"<br><b>योग्य पर्याय: "+String.fromCharCode(65+q[2])+") "+q[1][q[2]]+"</b>"}fb.innerHTML+=`<div class="actions"><button class="btn primary" onclick="nextQ()">${idx===19?"निकाल पहा 🏆":"पुढील प्रश्न →"}</button></div>`}
+function nextQ(){if(idx<19){idx++;renderQ()}else{finishTest()}}
+function finishTest(){let sec=Math.round((Date.now()-startTime)/1000),min=Math.floor(sec/60),s=sec%60,n=document.getElementById("studentName").value.trim(),acc=score*5;let level=score>=18?"🏆 उत्कृष्ट":score>=14?"⭐ चांगली कामगिरी":"📚 अधिक सराव आवश्यक";document.getElementById("resultBox").innerHTML=`<p><b>विद्यार्थी:</b> ${n}</p><div class="score">${score}/20</div><p style="text-align:center"><b>अचूकता: ${acc}%</b><br>योग्य उत्तरे: ${score}<br>चुकीची उत्तरे: ${20-score}<br>वेळ: ${min} मिनिटे ${s} सेकंद</p><h3 style="text-align:center">${level}</h3><div class="cert"><h2>🥇 प्रमाणपत्र</h2><p>नवोदय विजययान – JNVST Learning Journey</p><h3>MAT-02 : वर्गीकरण</h3><p>हे प्रमाणित करण्यात येते की</p><h2>${n}</h2><p>यांनी ही चाचणी यशस्वीरीत्या पूर्ण केली.</p><h3>गुण : ${score} / 20</h3><p>अचूकता : ${acc}%</p><p>🌟 “सरावातून प्रगती आणि प्रगतीतून यश!” 🌟</p><hr><p><b>सौजन्य - श्री. प्रवीण वसंतराव जाधव</b><br>जि.प. केंद्रीय प्राथमिक शाळा, तालखेड<br>📞 9527672044</p></div><div class="actions"><button class="btn primary" onclick="showTab('test',null);location.reload()">🔄 पुन्हा चाचणी</button><button class="btn" onclick="window.print()">🖨️ प्रमाणपत्र प्रिंट</button></div>`;showTab("result",null)}
+function showTab(id,btn){document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));if(btn)btn.classList.add("active");window.scrollTo({top:0,behavior:"smooth"})}
+</script>
+</body>
+</html>
